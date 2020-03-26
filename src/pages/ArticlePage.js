@@ -3,7 +3,7 @@ import articles from './article-content'
 
 const ArticlePage = ({ match }) => {
     const name = match.params.name
-    const article = articles.find((article) =>article.name===name)
+    const article = articles.find((article) => article.name===name)
     if(!article) return <h1>Article does not exist</h1>
     return (
     <>
