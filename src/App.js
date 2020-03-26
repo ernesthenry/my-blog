@@ -1,5 +1,10 @@
 import React from 'react';
 import HomePage from "./pages/Homepage"
+import AboutPage from './pages/AboutPage'
+import ArticlesList from './pages/ArticlesList'
+import ArticlePage from './pages/ArticlePage'
+import NavBar from './NavBar'
+
 import { 
   BrowserRouter as Router,
   Route
@@ -10,7 +15,14 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Route  path="/" component={HomePage} exact />
+        <NavBar />
+        <div id="page-body">
+          <Route  path="/" component={HomePage} exact />
+          <Route  path="/about" component={AboutPage}/>
+          <Route  path="/articles-list" component={ArticlesList} />
+          <Route  path="/article/:name" component={ArticlePage} />
+        </div>
+       
       </div>
     </Router>    
   );
